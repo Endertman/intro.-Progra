@@ -31,3 +31,16 @@ my_cat = Cat('Mimi', 2, 'Blanco')
 
 my_cat.bread
 my_cat.maullar
+
+for i in range (len(self.Estudiantes)):
+    cant_notas40 = 2 #int(input(f'Cuantas notas de 40% seran ingresadas para {self.Estudiantes[i].nombre}: '))
+    for j in range(cant_notas40):
+        print('Notas 40%')
+        notas40 = float(input(f'Ingrese la nota N°{j+1} de {self.Estudiantes[i].nombre}: '))
+        self.Estudiantes[i].nota += (notas40*(0.4))/cant_notas40
+        
+    cant_notas10 = 2 #int(input(f'Cuantas notas de 10% seran ingresadas para {self.Estudiantes[i].nombre}: '))
+    for j in range(cant_notas10):
+        print('Notas 10%')
+        notas10 = float(input(f'Ingrese la nota N°{j+1} de {self.Estudiantes[i].nombre}: '))
+        self.Estudiantes[i].nota += (notas10*0.1)/cant_notas10 

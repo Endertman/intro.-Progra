@@ -4,6 +4,15 @@ import numpy as np
 # self hace referencia al objeto que se esta creando.
 # __str__ es un metodo que se llama cuando se imprime un objeto. 
 
+# class Comic:
+#     def __init__(self, title, editorial, version, hero):
+#         self.title = title
+#         self.editorial = editorial
+#         self.version = version
+#         self.hero = hero
+    
+#     def __str__(self):
+#         return f'Comic(Title = {self.title}, Hero = {self.hero}, )'
 class Book: 
     def __init__(self, title, author,isbn):
         self.title = title
