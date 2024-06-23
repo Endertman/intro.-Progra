@@ -9,23 +9,24 @@ class Estudiante:
         self.estado = estado
         self.materia = materia
 
-    def __str__(self):
-        return f'Estudiante: \nRUT: {self.rut} \nNombre: {self.nombre} \nEdad: {self.edad} \nNota: {self.nota}  \nEstado: {self.estado}  \nMateria: {self.materia}'
+    #defino la forma de salida del estudiante para evitar que me imprima la direccion en memoria
+    #def __str__(self):
+        #return f'Estudiante: \nRUT: {self.rut} \nNombre: {self.nombre} \nEdad: {self.edad} \nNota: {self.nota}  \nEstado: {self.estado}  \nMateria: {self.materia}'
 
 class Notas:
     def __init__(self):
-        self.Estudiantes = []
+        self.Estudiantes = [] #Lista con los estudiantes
     
     def agregar_estudiante(self, estudiante):
         self.Estudiantes.append(estudiante)
         print(f'Estudiante {estudiante.nombre} agregado correctamente \n')
     
     def agregar_notas(self):
-        if len(self.Estudiantes) == 0:
+        if len(self.Estudiantes) == 0: #si lista con estudiantes esta vacia no arranca la funcion
             print('No hay estudiantes registrados, al menos registre un estudiante')
         else: 
             for i in range (len(self.Estudiantes)):
-                cant_notas40 = int(input(f'Cuantas notas correspodietes al 80% seran ingresadas para {self.Estudiantes[i].nombre}: '))
+                cant_notas40 = int(input(f'Cuantas notas que corresponden al 80% seran ingresadas para {self.Estudiantes[i].nombre}: '))
                 for j in range(cant_notas40):
                     print(f'Notas {80/cant_notas40}%')
                     notas40 = float(input(f'Ingrese la nota N°{j+1} de {self.Estudiantes[i].nombre}: '))
@@ -45,7 +46,8 @@ class Notas:
                         print('La nota no es valida, por favor ingresela de nuevo')
                         notas10 = float(input(f'Ingrese la nota N°{j+1} de {self.Estudiantes[i].nombre}: '))
 
-inicio = True
+#Menú
+inicio = True 
 notas = Notas()
 while inicio == True:
     funcion = int(input('1.- Ingrese un Alumno. \n2.- Ingresar notas de Alumno. \n3.- Listar Notas de Alumnos. \n4.- Salir \n-> '))
@@ -78,4 +80,5 @@ while inicio == True:
     
     else:
         print('Opcion no valida')
+        
         
